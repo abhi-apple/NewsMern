@@ -1,46 +1,50 @@
+import React from 'react'
+import { useState } from 'react'
+import { useEffect } from 'react'
 import PropTypes from "prop-types";
-import NewsItem from "./NewsItem";
+import NewsItem2 from "./NewsItem2";
 import Headers from "./Header";
+import newsItemCss2 from "../styles/newsItem2.css";
 
-import React, { Component } from "react";
+const News = (props) => {
 
-export class News extends Component {
-  constructor() {
-    super();
-    this.state = {
-      articles: [],
-      loading: false,
-      heading: "",
-    };
-  }
+    let [heading, setheading] = useState("");
+    let [articles, setarticles] = useState([]);
 
-  async componentDidMount() {
-    // let API_KEY = "17d463e1f60c466583ea35a35d19b971";
-    let API_KEY = "17";
+    async function load(){
+  let API_KEY = "17d463e1f60c466583ea35a35d19b971";
+    // let API_KEY = "17";
     let url;
-    if (this.props.category == null) {
-      this.state.heading = "Top Headlines";
+    if (props.category == null) {
+      setheading("Top Headlines")
       console.log("null category");
       url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=${API_KEY}`;
     } else {
-      let { category } = this.props;
-      this.state.heading = category;
+      let { category } = props;
+      setheading(category);
 
       url = `https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=${API_KEY}`;
     }
     let data = await fetch(url);
     let parseData = await data.json();
     console.log(parseData);
-    this.setState({ articles: parseData.articles });
-  }
-  render() {
-    return (
-      <div>
-        <h2 className="heading">{this.state.heading}</h2>
-        
-        <div className="news">
-          {this.state.articles?.map((element, index) => (
-            <NewsItem
+    setarticles(parseData.articles);
+    }
+
+    useEffect(() => {
+      load();
+    }, [heading, articles])
+    
+
+  return(
+    <div>
+      <h2 className="heading">{heading}</h2>
+
+      <div className="news-container">
+      {articles?.map((element, index) => {
+          console.log(element);
+          return (
+            <NewsItem2
               imgUrl={element.urlToImage}
               title={element.title}
               description={element.description}
@@ -50,11 +54,11 @@ export class News extends Component {
               newsUrl={element.url}
               key={index}
             />
-          ))}
-        </div>
+          );
+        })}
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default News;
