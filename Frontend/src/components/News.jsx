@@ -12,12 +12,12 @@ const News = (props) => {
   let [articles, setarticles] = useState([]);
 
   async function load() {
-    // let API_KEY = "17d463e1f60c466583ea35a35d19b971";
+    let API_KEY = "17d463e1f60c466583ea35a35d19b971";
     
     // let API_KEY = "5b3b4ed476cc4feebcf0ddd1e415da42";
     // let API_KEY = "ff22fa5cb7ac4383aa120e77d9423ef1";
     
-    let API_KEY = "17d463";
+    // let API_KEY = "17d463";
     let url;
     if (category == null) {
       setheading("Top Headlines");
@@ -40,8 +40,8 @@ const News = (props) => {
 
   return (
     <div>
-      <h2 className="heading">{heading}</h2>
-
+      <div className="news-main-container">
+      <h2 className="news-heading">{heading}</h2>
       <div className="news-container">
         {articles?.map((element, index) => {
           console.log(element);
@@ -59,6 +59,7 @@ const News = (props) => {
           );
         })}
       </div>
+    </div>
     </div>
   );
 };

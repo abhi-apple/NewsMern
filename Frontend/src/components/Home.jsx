@@ -7,27 +7,36 @@ import Login from "./Login";
 import NavBar from "./NavBar";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Dashboard from "./DashBoard";
+import PrivateComponent_2 from "./PrivateComponent_2";
+import UpdateUser from "./UpdateUser"
 import { useState } from "react";
 
 function Home(props) {
-
   let [searchValue, setSearchValue] = useState("");
-  function updateSearchVal(val){
+  function updateSearchVal(val) {
     setSearchValue(val);
-    console.log(searchValue)
+    console.log(searchValue);
   }
 
   return (
     <div>
       <Router>
-        <NavBar updateSearchVal = {updateSearchVal}/>
+        <NavBar updateSearchVal={updateSearchVal} />
         <div className="container" style={{ width: "100%" }}>
           <Routes>
             <Route exact path="/" element={<News />}></Route>
             <Route path={`/:category`} element={<News />}></Route>
             <Route path="/signup" element={<SignUp />}></Route>
             <Route path="/login" element={<Login />}></Route>
-            <Route path="/dashboard" element={<Dashboard />}></Route>
+            <Route element={<PrivateComponent_2 />}>
+              <Route exact path="/" element={<News />}></Route>
+              <Route path={`/:category`} element={<News />}></Route>
+              <Route path="/dashboard" element={<Dashboard />}></Route>
+              <Route path="/signup" element={<SignUp />}></Route>
+              <Route path="/login" element={<Login />}></Route>
+              <Route path="/update" element={<UpdateUser />}></Route>
+            </Route>
+
           </Routes>
         </div>
       </Router>

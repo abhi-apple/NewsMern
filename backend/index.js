@@ -73,6 +73,29 @@ app.post("/login", async (req, res) => {
   }
 });
 
+//Search User
+app.put("/user", verifyToken, async(req, res) => {
+  let result = await Users_model.findOne({ _id: req.body.userID });
+  if (result) {
+      res.send(result)
+  } else {
+      res.send({ result: "No user found" })
+  }
+})
+
+// Update User
+app.put("/update", verifyToken, async (req, res) => {
+  let result = await Users_model.updateOne(
+    { _id: req.body.userID },
+    {
+      // $set is neccessary for updation
+      $set: req.body,
+    }
+  );
+
+  res.send(result);
+});
+
 function verifyToken(req, res, next) {
   // Getting token from headers
   let token = req.headers["authorization"];

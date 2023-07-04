@@ -104,7 +104,7 @@ background-color: #0000003b;
   align-items: center;
 }
 
-.heading{
+.news-heading{
 	text-transform: uppercase;
 	width: 35%;
 	/* letter-spacing: 3px; */
@@ -117,6 +117,18 @@ background-color: #0000003b;
 	margin-top: 10px;
 	/* text-align: center; */
 
+}
+
+.news-main-container{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex-wrap: wrap;
+  row-gap: 30px;
+  column-gap: 3%;
+  justify-content: center;
+  align-items: center;
 }
 
 a{

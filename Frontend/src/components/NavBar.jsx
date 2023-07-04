@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import style from "../styles/nav.css";
 import $ from "jquery";
 import { useState } from "react";
-
 import { BrowserRouter as Router, Switch, Route, Link, useNavigate } from "react-router-dom";
 
 function NavBar(props) {
@@ -42,6 +41,8 @@ function NavBar(props) {
     }
   }
 
+  const auth = localStorage.getItem("user");
+
   return (
     <div style={style}>
       <section className="navigation">
@@ -78,13 +79,13 @@ function NavBar(props) {
                 <a href="/technology">Technology</a>
               </li>
               <li>
-                <a href="/signup" style={{backgroundColor: "#383f51"}}>Sign Up</a>
+                {auth==null? <a href="/signup" style={{backgroundColor: "#383f51"}}>Sign Up</a>:""}
               </li>
               <li>
-                <a href="/login" style={{backgroundColor: "#383f51"}}>Log in</a>
+                {auth == null? <a href="/login" style={{backgroundColor: "#383f51"}}>Log in</a>:""}
               </li>
               <li>
-                <a href="/dashboard "><i class="fa-solid fa-user" style={{color: "#ff3a24"}}></i></a>
+              {auth?<a href="/dashboard "><i class="fa-solid fa-user" style={{color: "#ff3a24"}}></i></a>:""}
               </li>
               {/* <li><a href="/">Contact Me</a></li> */}
             </ul>
