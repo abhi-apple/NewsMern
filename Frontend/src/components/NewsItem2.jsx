@@ -1,4 +1,4 @@
-import newsItemCss2 from "../styles/newsItem2.css";
+import "../styles/newsItem2.css";
 
 import React, { useState } from "react";
 

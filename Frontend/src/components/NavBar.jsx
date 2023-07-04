@@ -58,13 +58,13 @@ function NavBar(props) {
                 <a href="/technology">Technology</a>
               </li>
               <li>
-                <a href="/about">About</a>
+                <a href="/signup" style={{backgroundColor: "#383f51"}}>Sign Up</a>
               </li>
               <li>
-                <a href="/" style={{backgroundColor: "#383f51"}}>Sign Up</a>
+                <a href="/login" style={{backgroundColor: "#383f51"}}>Log in</a>
               </li>
               <li>
-                <a href="/" style={{backgroundColor: "#383f51"}}>Log in</a>
+                <a href="/login"><i class="fa-solid fa-user" style={{color: "#ff3a24"}}></i></a>
               </li>
               {/* <li><a href="/">Contact Me</a></li> */}
             </ul>
