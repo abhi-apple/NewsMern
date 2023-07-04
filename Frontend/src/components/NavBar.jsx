@@ -2,9 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import style from "../styles/nav.css";
 import $ from "jquery";
+import { useState } from "react";
 
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link, useNavigate } from "react-router-dom";
+
 function NavBar(props) {
+  let navigate = useNavigate();
+  const [searchValue, setSearchValue] = useState("");
   window.addEventListener("load", function () {
     let nav_toggle = document.getElementById("nav_toggle");
     let nav_ul = document.getElementById("nav_list");
@@ -25,13 +29,24 @@ function NavBar(props) {
     }
   });
 
+  function searchHandle(event){
+    let val = event.target.value;
+    setSearchValue(val);
+  }
+
+  function searchNewsEnter(event) {
+    if (event.key === "Enter") {
+      let path = "/" + searchValue;
+      props.updateSearchVal(searchValue);
+      navigate(path);
+    }
+  }
+
   return (
     <div style={style}>
       <section className="navigation">
         <div className="nav-container">
           <div className="brand">
-            {/* <img src="../../public/images/logo.png" alt="News Aggregator" height={100} width={100}/> */}
-            {/* <Link to="/">News Adda</Link> */}
           </div>
           <nav>
             <div className="nav-mobile">
@@ -42,9 +57,14 @@ function NavBar(props) {
             <ul className="nav_list" id="nav_list">
               {/* <!-- Setting the links to #! will ensure that no action takes place on click. --> */}
               <li>
+                <input type="text" id="nav-search" placeholder="Search" onChange={(event) => searchHandle(event)}
+          onKeyDown={(event) => {
+            searchNewsEnter(event);
+          }}/>
+              </li>
+              <li>
                 <a href="/">Top News</a>
               </li>
-
               <li>
                 <a href="/entertainment">Entertainment</a>
               </li>
@@ -64,7 +84,7 @@ function NavBar(props) {
                 <a href="/login" style={{backgroundColor: "#383f51"}}>Log in</a>
               </li>
               <li>
-                <a href="/login"><i class="fa-solid fa-user" style={{color: "#ff3a24"}}></i></a>
+                <a href="/dashboard "><i class="fa-solid fa-user" style={{color: "#ff3a24"}}></i></a>
               </li>
               {/* <li><a href="/">Contact Me</a></li> */}
             </ul>
