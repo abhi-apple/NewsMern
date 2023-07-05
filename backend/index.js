@@ -95,6 +95,11 @@ app.put("/update", verifyToken, async (req, res) => {
 
   res.send(result);
 });
+// Delete User
+app.delete("/delete", verifyToken, async (req, res) => {
+  let result = await Users_model.deleteOne({ _id: req.body.userID });
+   res.send(result);
+});
 
 // Function to verify token 
 function verifyToken(req, res, next) {

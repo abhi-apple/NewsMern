@@ -20,7 +20,7 @@ function Home(props) {
   }
 
   return (
-    <div    >
+    <div>
       <Router>
         <NavBar updateSearchVal={updateSearchVal} />
         <div className="container" style={{ width: "100%" }}>

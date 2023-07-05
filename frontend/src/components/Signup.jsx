@@ -97,7 +97,7 @@ function SignUp() {
             <label htmlFor="country">Coutry </label>
             <input
               type="text"
-              placeholder="Enter password"
+              placeholder="Enter country"
               onChange={updateFormData}
               name="country"
               value={formData.country}

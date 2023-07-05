@@ -17,7 +17,10 @@ function Footer() {
             <h4>Team Members</h4>
             <ul>
               <li>
-                <a href="https://www.linkedin.com/in/aaditya-nayak-an73a8208/" target="_blank">
+                <a
+                  href="https://www.linkedin.com/in/aaditya-nayak-an73a8208/"
+                  target="_blank"
+                >
                   Aaditya Nayak
                 </a>
                 <a href="https://github.com/AadityaNayak" target="_blank">
@@ -25,21 +28,34 @@ function Footer() {
                 </a>
               </li>
               <li>
-                <a href="https://www.linkedin.com/in/vedanta-sharma-7857b7251" target="_blank">
-                Vedanta Sharma
+                <a
+                  href="https://www.linkedin.com/in/vedanta-sharma-7857b7251"
+                  target="_blank"
+                >
+                  Vedanta Sharma
                 </a>
                 <a href="https://github.com/vedanta-sharma" target="_blank">
                   <i class="fa-brands fa-github"></i>
                 </a>
               </li>
               <li>
-                <a href="https://www.linkedin.com/in/abhinay-reddy-9375a1203/" target="_blank">Abhinay Prakash Reddy</a>
+                <a
+                  href="https://www.linkedin.com/in/abhinay-reddy-9375a1203/"
+                  target="_blank"
+                >
+                  Abhinay Prakash Reddy
+                </a>
                 <a href="https://github.com/abhi-apple" target="_blank">
                   <i class="fa-brands fa-github"></i>
                 </a>
               </li>
               <li>
-                <a href="https://www.linkedin.com/in/melvin-m-george/" target="_blank">Melvin M George</a>
+                <a
+                  href="https://www.linkedin.com/in/melvin-m-george/"
+                  target="_blank"
+                >
+                  Melvin M George
+                </a>
                 <a href="https://github.com/Melvin-M-George" target="_blank">
                   <i class="fa-brands fa-github"></i>
                 </a>
@@ -49,14 +65,11 @@ function Footer() {
           <div class="col-md-4">
             <h4>Contact Us</h4>
             <p>
-              Email: <a href="">asecondary652@gmail.com
-</a>
+              Email: <a href="">asecondary652@gmail.com</a>
             </p>
           </div>
         </div>
-        <div className="copyright">
-          &copy; 2023
-        </div>
+        <div className="copyright">&copy; 2023</div>
       </div>
     </footer>
   );
