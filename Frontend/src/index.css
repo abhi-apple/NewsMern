@@ -7,6 +7,54 @@ body {
 
 }
 
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  position:relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin-top: 20px;
+  font-style: italic;
+  
+}
+
+.footer h4 {
+  color: rgb(194, 201, 68);
+  margin-bottom: 10px;
+}
+
+footer ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-weight: 500;
+}
+
+footer li {
+  font-size:1.1rem;
+  display: flex;
+  
+  width: 100%;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+footer a {
+  margin: 5px;
+  display: inline-block;
+  font-weight: 500;
+}
+
+.copyright {
+  font-weight: 500;
+  font-size: 12px;
+}
+
 /* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

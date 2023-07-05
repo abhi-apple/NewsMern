@@ -76,7 +76,7 @@ function SignUp() {
           <div className="form-ele">
             <label htmlFor="password">Password </label>
             <input
-              type="text"
+              type="password"
               placeholder="Enter password"
               onChange={updateFormData}
               name="password"

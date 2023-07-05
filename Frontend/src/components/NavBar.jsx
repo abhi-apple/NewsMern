@@ -57,26 +57,26 @@ function NavBar(props) {
             </div>
             <ul className="nav_list" id="nav_list">
               {/* <!-- Setting the links to #! will ensure that no action takes place on click. --> */}
-              <li>
+              {auth?<li>
                 <input type="text" id="nav-search" placeholder="Search" onChange={(event) => searchHandle(event)}
           onKeyDown={(event) => {
             searchNewsEnter(event);
           }}/>
+              </li>:""}
+              <li>
+              <a href="/">Top News</a>
               </li>
               <li>
-                <a href="/">Top News</a>
+              {auth?<a href="/entertainment">Entertainment</a>:""}
               </li>
               <li>
-                <a href="/entertainment">Entertainment</a>
+              {auth?<a href="/business">Business</a>:""}
               </li>
               <li>
-                <a href="/business">Business</a>
+                {auth?<a href="/science">Science</a>:""}
               </li>
               <li>
-                <a href="/science">Science</a>
-              </li>
-              <li>
-                <a href="/technology">Technology</a>
+                {auth?<a href="/technology">Technology</a>:""}
               </li>
               <li>
                 {auth==null? <a href="/signup" style={{backgroundColor: "#383f51"}}>Sign Up</a>:""}

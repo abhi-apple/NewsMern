@@ -96,6 +96,7 @@ app.put("/update", verifyToken, async (req, res) => {
   res.send(result);
 });
 
+// Function to verify token 
 function verifyToken(req, res, next) {
   // Getting token from headers
   let token = req.headers["authorization"];
