@@ -39,8 +39,8 @@ function Footer() {
                 </a>
               </li>
               <li>
-                <a href="" target="_blank">Melvin M George</a>
-                <a href="" target="_blank">
+                <a href="https://www.linkedin.com/in/melvin-m-george/" target="_blank">Melvin M George</a>
+                <a href="https://github.com/Melvin-M-George" target="_blank">
                   <i class="fa-brands fa-github"></i>
                 </a>
               </li>
